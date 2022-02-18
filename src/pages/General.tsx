@@ -25,7 +25,6 @@ export default function General(){
     console.log(`${num} clicks! You added the ${stone} stone!`);
   }
 
-  console.log(icons)
   const treeNodes = {
     data: [
       {
