@@ -2,7 +2,6 @@ import { Frame, TitleBar } from "@react95/core";
 import { Confcp118 } from "@react95/icons";
 
 export default function FourOhFour(){
-  console.log('boom')
   return(
     <Frame
       className="mx-12"

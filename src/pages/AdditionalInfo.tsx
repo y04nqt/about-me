@@ -77,7 +77,6 @@ export default function AdditionalInfo(){
     openLink(ADDITIONAL_INFO_ENUM[selectedOption].link);
   }
 
-  console.log(selectedOption, ADDITIONAL_INFO_ENUM[selectedOption]);
   return(
     <Frame
       padding={8}
