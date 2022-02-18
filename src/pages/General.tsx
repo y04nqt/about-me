@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Frame, Tree, Button } from "@react95/core"
+import { openLink } from "../helpers";
 const { icons } = Tree;
 
 export default function General(){
@@ -13,10 +14,6 @@ export default function General(){
     purple: false,
     orange: false,
   })
-
-  const openLink = (link: string) => {
-    window.open(link, '_blank');
-  }
 
   const easterTracker = (stone: string) => {
     const num = counter + 1
@@ -63,7 +60,7 @@ export default function General(){
                 id: 1,
                 label: 'GitHub',
                 icon: <icons.FILE_PEN />,
-                url: 'www.github.com/y04nqt'
+                onClick: () => openLink('https://www.github.com/y04nqt')
               }
             ]
           },

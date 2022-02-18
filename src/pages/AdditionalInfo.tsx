@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Frame, RadioButton, Button, TitleBar } from "@react95/core"
 import styled from 'styled-components';
 import { Bookmark } from "@react95/icons";
+import { openLink } from "../helpers";
 
 const RadioButtonList = styled.div`
   display: flex;
@@ -73,7 +74,7 @@ export default function AdditionalInfo(){
   }
 
   const handleRadioButtonSubmit = (e: any) => {
-    window.open(ADDITIONAL_INFO_ENUM[selectedOption].link);
+    openLink(ADDITIONAL_INFO_ENUM[selectedOption].link);
   }
 
   console.log(selectedOption, ADDITIONAL_INFO_ENUM[selectedOption]);
