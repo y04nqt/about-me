@@ -9,8 +9,16 @@ export default function TheDoor(){
       let timer = window.setTimeout(() => {
         setOpen(true);
       }, 500000);
+
+      let ticker = 500000;
+      let interval = window.setInterval(() => {
+        ticker -= 1000;
+        console.log(ticker);
+      }, 1000);
+
       return () => {
         clearTimeout(timer);
+        clearInterval(interval);
       };
     }
   }, [open]);
