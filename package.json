@@ -1,7 +1,7 @@
 {
   "name": "about-me",
   "version": "0.1.0",
-  "homepage": "https://y04nqt.github.io/",
+  "homepage": "https://y04nqt.github.io",
   "private": true,
   "dependencies": {
     "@react95/core": "^5.7.3",
