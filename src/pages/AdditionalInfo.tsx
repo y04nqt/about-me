@@ -62,7 +62,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
     labelText: 'Youtube Rock Climbing Channel',
     name: 'Youtube',
     link: 'https://www.youtube.com/channel/UC_Cazf0InKheWZYtSEtz0Og',
-    description: "My SoundCloud profile that contains my music."
+    description: "My Youtube channel with rock climbing videos."
   }
 }
 
