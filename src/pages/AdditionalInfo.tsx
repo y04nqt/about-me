@@ -33,7 +33,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
     btnText: 'Download it!',
     labelText: 'Get my Résumé',
     name: 'Résumé',
-    link: '/aaron_krueger_resume.pdf',
+    link: 'https://github.com/y04nqt/about-me/raw/main/public/aaron_krueger_resume.pdf',
     description: "My résumé that contains my education and work experience."
   },
   github: {
