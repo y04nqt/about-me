@@ -5,7 +5,7 @@ import '@react95/icons/icons.css';
 import './App.css';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
