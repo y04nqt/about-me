@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Frame, Tree, Button } from "@react95/core"
 import { openLink } from "../helpers";
+
 const { icons } = Tree;
 
 export default function General(){
