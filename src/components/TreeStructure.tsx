@@ -14,32 +14,32 @@ export default function TreeStructure({
   const treeNodes = {
     data: [
       {
-        id: 1,
+        id: 0,
         label: 'Employed App Builds',
         className: 'increase-folder-status',
         children: [
           {
-            id: 2,
+            id: 1,
             label: 'I9 Verification App',
             icon: <icons.FILE_EXECUTABLE />,
           },
           {
-            id: 3,
+            id: 2,
             label: 'Worker App to Manage Shifts',
             icon: <icons.FILE_EXECUTABLE />,
           },
           {
-            id: 4,
+            id: 3,
             label: 'A-B Ride Share',
             icon: <icons.FILE_EXECUTABLE />,
           },
           {
-            id: 5,
+            id: 4,
             label: 'Subscription Tracker',
             icon: <icons.FILE_EXECUTABLE />,
           },
           {
-            id: 512321313,
+            id: 5,
             label: 'Outbound Call Center',
             icon: <icons.FILE_EXECUTABLE />,
           },
@@ -75,19 +75,19 @@ export default function TreeStructure({
                 onClick: () => easterTracker('green'),
               },
               {
-                id: 55,
+                id: 11,
                 label: 'climbing_pics',
                 icon: <icons.FILE_EXECUTABLE />,
                 onClick: () => getModal('climbing'),
               },
               {
-                id: 11,
+                id: 12,
                 label: 'gym_training+progams',
                 icon: <icons.FILE_PEN />,
                 onClick: () => easterTracker('blue'),
               },
               {
-                id: 11,
+                id: 13,
                 label: 'Mushrooms!',
                 icon: <icons.FILE_FONT />,
                 onClick: () => getModal('mushrooms'),
@@ -95,24 +95,24 @@ export default function TreeStructure({
             ],
           },
           {
-            id: 12,
-            label: 'Smoking_Meats_Shaking_Drinks_collection',
+            id: 14,
+            label: 'meats_&_drinks_collection',
             className: 'increase-folder-status',
             children: [
               {
-                id: 123123123,
+                id: 15,
                 label: 'Drinks',
                 icon: <icons.FILE_UNKNOWN />,
                 onClick: () => getModal('drinks'),
               },
               {
-                id: 13,
+                id: 16,
                 label: 'Beef Jerky',
                 icon: <icons.FILE_PEN />,
                 onClick: () => easterTracker('purple'),
               },
               {
-                id: 14,
+                id: 17,
                 label: 'Pork Butt',
                 icon: <icons.FILE_PEN />,
                 onClick: () => easterTracker('orange'),
@@ -120,30 +120,30 @@ export default function TreeStructure({
             ],
           },
           {
-            id: 15,
+            id: 18,
             label: 'Producing Music',
             className: 'increase-folder-status',
             children: [
               {
-                id: 16,
+                id: 19,
                 label: 'SoundCloud',
                 icon: <icons.FILE_MEDIA />,
                 onClick: () => easterTracker('red'),
               },
               {
-                id: 17,
+                id: 20,
                 label: 'Check this out',
                 icon: <icons.FILE_MEDIA />,
                 onClick: () => openLink('https://soundcloud.com/mag_landrace/tracks'),
               },
               {
-                id: 18,
+                id: 21,
                 label: 'DAW - Native Instruments',
                 icon: <icons.FILE_SETTINGS />,
                 onClick: () => openLink('https://www.native-instruments.com/en/catalog/maschine/'),
               },
               {
-                id: 18,
+                id: 22,
                 label: 'Electronic | Trap | Experimental',
                 icon: <icons.FILE_SETTINGS />,
                 onClick: () => easterTracker('yellow'),
@@ -153,18 +153,18 @@ export default function TreeStructure({
         ],
       },
       {
-        id: 19,
+        id: 23,
         label: 'landrace.WAV',
         icon: <icons.FILE_MEDIA />,
         onClick: () => getModal('music'),
       },
       {
-        id: 20,
+        id: 24,
         label: 'config.yml',
         icon: <icons.FILE_SETTINGS />,
       },
       {
-        id: 21,
+        id: 25,
         label: 'eli.jpg',
         icon: <icons.FILE_UNKNOWN />,
         onClick: () => getModal('eli'),

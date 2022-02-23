@@ -294,7 +294,7 @@ function GenericPopupContent({
         {title}
       </h1>
       <img
-        className="rounded-full w-3/4 mx-auto border-4 border-gray-800"
+        className="rounded-lg h-[18rem] mx-auto border-2 border-t-gray-800 border-l-gray-800 border-b-white"
         src={imgArr[randIndex]}
         alt={altArr[randIndex]}
       />
