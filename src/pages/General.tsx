@@ -84,7 +84,6 @@ export default function General(){
 
   const toggleModal = () => {
     setShowModal(!showModal);
-    console.log(showModal, 'here');
   }
 
   const getModal = (item: string) => {

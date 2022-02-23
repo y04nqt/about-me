@@ -35,7 +35,7 @@ export default function Modal({
   const closeModal = () => {
     toggleModal();
   };
-  console.log(defaultPosition);
+
   return (
     <Modal95
       width={width}
