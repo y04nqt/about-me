@@ -72,3 +72,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media only screen and (max-width: 600px) {
+  /*
+    this specifically targets the Tree +/- boxes
+    this increases the size slightly to make it
+    easier to use on mobile
+  */
+
+  .increase-folder-status > div > div:first-child {
+    font-size: 1rem;
+    line-height: 0.75rem;
+    width: 20px;
+    height: 20px;
+    margin-top: -6px;
+    margin-left: -5px;
+  }
+}
+
+.eli-0 {
+  background-image: url('assets/eli/eli_with_hat.png');
+}
+
+.eli-1 {
+  background-image: url('assets/eli/eli_sleepy.png');
+}
+
+.eli-2 {
+  background-image: url('assets/eli/eli_lookout.png');
+}
