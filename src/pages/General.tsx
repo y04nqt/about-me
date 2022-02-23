@@ -194,10 +194,10 @@ export default function General(){
           ]}
         />),
         btns: [{
-          value: 'Cheers',
+          value: 'Forage',
           onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
         }, {
-          value: 'Salud',
+          value: 'Pick Up',
           onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
         }],
       },

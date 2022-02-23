@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Frame } from '@react95/core';
+import { Frame, ProgressBar } from '@react95/core';
 
-
+const TIME = 500000;
 export default function TheDoor(){
   const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
   useEffect(() => {
     if (!open) {
       let timer = window.setTimeout(() => {
         setOpen(true);
-      }, 500000);
+      }, TIME);
 
-      let ticker = 500000;
+      let ticker = TIME;
       let interval = window.setInterval(() => {
         ticker -= 1000;
-        console.log(ticker);
+        const prog = Math.abs((ticker/TIME) - 1) * 100;
+        setProgress(Number(prog.toFixed(2)));
       }, 1000);
 
       return () => {
@@ -39,6 +41,11 @@ export default function TheDoor(){
         className="text-left overflow-x-auto"
         padding={8}
       >
+        <h2
+          className="text-white text-3xl text-center font-bold text-green-500"
+        >
+          Here's the beginning of your journey into the truth.
+        </h2>
         {!open && (
           <Frame
             bg="aliceblue"
@@ -55,10 +62,20 @@ export default function TheDoor(){
               id="pikachu"
               className='circles mx-auto rounded-full flex align-middle justify-center'
             >
-              <h1 className='self-center'>
-                Thank you for stopping by!
+              <h1
+                className='self-center rounded-lg'
+              >
+                Thank you<br/>for<br/>stopping by!
               </h1>
             </div>
+            <section
+              className={`mt-8 mx-auto text-lg py-8 bg-color-green text-center flex justify-center font-bold`}
+            >
+              <ProgressBar
+                width={window.innerWidth/2}
+                percent={progress}
+              />
+            </section>
           </Frame>
         )}
         {open && (
