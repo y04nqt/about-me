@@ -96,7 +96,7 @@ export default function TreeStructure({
           },
           {
             id: 14,
-            label: 'meats_&_drinks_collection',
+            label: 'culinary_collection',
             className: 'increase-folder-status',
             children: [
               {

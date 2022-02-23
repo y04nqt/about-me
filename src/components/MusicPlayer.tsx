@@ -2,8 +2,9 @@ import { Frame, TitleBar } from "@react95/core";
 
 const MusicPlayer = () => (
   <Frame
-    className="mt-20"
+    className="mt-12"
   >
+    {/* Add some cool flashing animation text or something funky here */}
     <TitleBar
       title="DJ Landrace - Song of the Week"
     />
@@ -38,7 +39,7 @@ const MusicPlayer = () => (
     <Frame
       boxShadow="out"
     >
-      <p className="text-green-400 p-4">
+      <p id="me" className="text-green-400 p-4">
         This song I made in a couple of days.
         It was inspired by Lil Wayne's music and some other pump up jams.
         I find making trap beats is a lot of fun and easy. I hope you enjoy :)

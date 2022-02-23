@@ -89,7 +89,7 @@ export default function General(){
 
   const getModal = (item: string) => {
     const width = window.innerWidth / 1.25;
-    const height = window.innerHeight / 1.5;
+    const height = window.innerHeight / 1.25;
     const content:IMIMap = {
       eli: {
         w: `${(width < 500) ? width : 500}`,
@@ -294,7 +294,7 @@ function GenericPopupContent({
         {title}
       </h1>
       <img
-        className="rounded-lg h-[18rem] mx-auto border-2 border-t-gray-800 border-l-gray-800 border-b-white"
+        className="rounded-lg h-[250px] mx-auto border-2 border-t-gray-800 border-l-gray-800 border-b-white"
         src={imgArr[randIndex]}
         alt={altArr[randIndex]}
       />

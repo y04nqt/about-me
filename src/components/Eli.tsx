@@ -19,11 +19,11 @@ export default function Eli(){
     >
       <h1 className="text-center">{titles[Math.floor(Math.random() * 3)]}</h1>
       <Frame
-        height={((window.innerHeight / 2) - 120)}
+        height={250}
         boxShadow="in"
       >
         <section
-          className={`eli-${Math.floor(Math.random() * 3)} w-full h-full bg-cover bg-center bg-no-repeat`}
+          className={`eli-${Math.floor(Math.random() * 3)} w-full h-[250px] bg-cover bg-center bg-no-repeat`}
         ></section>
       </Frame>
       <h1>{sub[Math.floor(Math.random() * 3)]}</h1>
