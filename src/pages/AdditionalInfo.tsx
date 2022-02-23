@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import { Bookmark } from "@react95/icons";
 import { openLink } from "../helpers";
 
-const RadioButtonList = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+const RadioButtonList = styled.div({
+  display: "flex",
+  flexDirection: "column",
+});
 
 interface ILink {
+  emoji: string,
   btnText: string;
   labelText: string;
   name: string;
@@ -23,46 +24,52 @@ interface IInfo {
 
 const ADDITIONAL_INFO_ENUM: IInfo = {
   email: {
+    emoji: '📧',
     btnText: 'Hello Aaron, let\'s talk!',
     labelText: 'Email me',
-    name: 'Email',
+    name: 'Email (akr.git.receiver@gmail.com)',
     link: 'mailto:akr.git.receiver@gmail.com?subject=Hello%20Aaron%20From%20Website',
-    description: "My email address that you can reach me."
+    description: "Copy the email address above to contact me."
   },
   resume: {
-    btnText: 'Download it!',
+    emoji: '📝',
+    btnText: 'Download it',
     labelText: 'Get my Résumé',
     name: 'Résumé',
     link: 'https://github.com/y04nqt/about-me/raw/main/public/aaron_krueger_resume.pdf',
-    description: "My résumé that contains my education and work experience."
+    description: "My résumé that contains my work experience and education. 📝"
   },
   github: {
-    btnText: 'Check out my GitHub',
+    emoji: '💾',
+    btnText: 'Explore My GitHub',
     labelText: 'Explore my Github',
     name: 'GitHub',
     link: 'https://www.github.com/y04nqt',
-    description: "My Github profile that contains my projects and other information.",
+    description: "My Github profile that contains my projects and other information. 💾",
   },
   linkedin: {
-    btnText: 'Check out my LinkedIn',
+    emoji: '👤',
+    btnText: 'Checkout My LinkedIn',
     labelText: 'My Professional Experience',
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/aaron-krueger-s117/',
-    description: "My LinkedIn profile contains my professional experience and recommendations."
+    description: "My LinkedIn profile contains my professional experience and recommendations. 👤"
   },
   soundcloud: {
-    btnText: 'Listen my songs on SoundCloud',
+    emoji: '📻',
+    btnText: 'Jam To My Music',
     labelText: 'Find the beats on SoundCloud',
     name: 'SoundCloud',
     link: 'https://soundcloud.com/mag_landrace',
-    description: "My SoundCloud profile that contains my music."
+    description: "My SoundCloud profile that contains my music. 📻"
   },
   youtube: {
-    btnText: 'Watch my sends on Youtube',
+    emoji: '📺',
+    btnText: 'Watch My Sends',
     labelText: 'Youtube Rock Climbing Channel',
     name: 'Youtube',
     link: 'https://www.youtube.com/channel/UC_Cazf0InKheWZYtSEtz0Og',
-    description: "My Youtube channel with rock climbing videos."
+    description: "My Youtube channel with rock climbing videos. 📺"
   }
 }
 
@@ -138,7 +145,7 @@ export default function AdditionalInfo(){
         {selectedOption && (
           <Button
             onClick={() => handleRadioButtonSubmit(selectedOption)}
-          >{ADDITIONAL_INFO_ENUM[selectedOption].btnText}</Button>
+          >{ADDITIONAL_INFO_ENUM[selectedOption].emoji} &nbsp; {ADDITIONAL_INFO_ENUM[selectedOption].btnText}</Button>
         )}
       </Frame>
     </Frame>

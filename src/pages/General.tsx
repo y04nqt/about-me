@@ -1,13 +1,58 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Frame, Tree, Button } from "@react95/core"
-import { openLink } from "../helpers";
+import { Frame } from "@react95/core"
+import { Computer } from '@react95/icons';
+import TreeStructure from "../components/TreeStructure";
+import Modal from "../components/Modal";
+import Eli from "../components/Eli";
+import MusicPlayer from "../components/MusicPlayer";
+import Portal from "../components/Portal";
+import Introduction from "../components/Introduction";
 
-const { icons } = Tree;
+interface IStoneMap {
+  [key: string]: string
+}
+
+interface IGauntletMap {
+  [key: string]: boolean
+}
+
+interface IModalMap {
+  [key: string]: Object
+}
+
+interface IModalItem {
+  title: string,
+  w: string,
+  h: string,
+  btns: Array<{
+    value: string,
+    onClick: () => void
+  }>,
+  icon?: JSX.Element,
+  dPos?: {
+    x: number,
+    y: number
+  },
+  children?: JSX.Element | null
+}
+
+interface IMIMap {
+  [key: string]: IModalItem
+}
 
 export default function General(){
+  const [modalItem, setModalItem] = useState<IModalItem>({
+    w: '400',
+    h: '400',
+    title: 'Information',
+    icon: <Computer variant="32x32_4" />,
+    btns: [],
+    dPos: {x: 0, y: 20},
+    children: null,
+  });
+  const [showModal, setShowModal] = useState(false);
   const [counter, setCounter] = useState(0);
-  const [infinityStoneGauntlet, setInfinityStoneGauntlet] = useState({
+  const [infinityStoneGauntlet, setInfinityStoneGauntlet] = useState<IGauntletMap>({
     red: false,
     blue: false,
     yellow: false,
@@ -16,140 +61,173 @@ export default function General(){
     orange: false,
   })
 
-  const easterTracker = (stone: string) => {
-    const num = counter + 1
-    setInfinityStoneGauntlet({
-      ...infinityStoneGauntlet,
-      [stone]: true
-    })
-    setCounter(num);
-    console.log(`${num} clicks! You added the ${stone} stone!`);
+  const alertUser = (num:number, stone: string) => {
+    const numArr = [
+      'You have found the first stone!',
+      'You have found the second stone!',
+      'You have found the third stone!',
+      'You have found the fourth stone!',
+      'You have found the fifth stone!',
+      'You have found the sixth stone!',
+    ]
+    const stoneMap:IStoneMap = {
+      red: 'That\'s a beauty. Becareful! It may become a part of you',
+      blue: 'Ah, the Space Stone has been located, great work!',
+      yellow: 'The Mind Stone. Press F to pay respects.',
+      green: 'Yes! The Time Stone has been located! Something around you feels strange...',
+      purple: 'With great power comes great responsibility. May the power stone bring strength to you!',
+      orange: 'The Soul Stone\'s energy imminates around you and you can feel the sacrifices of others.',
+    }
+
+    alert(`${numArr[num]}\n${stoneMap[stone]}`);
   }
 
-  const treeNodes = {
-    data: [
-      {
-        id: 123,
-        label: 'Employed App Builds',
-        children: [
-          {
-            id: 12,
-            label: 'I9 Verification App',
-            icon: <icons.FILE_EXECUTABLE />,
-          },
-          {
-            id: 23,
-            label: 'Worker App to Manage Shifts',
-            icon: <icons.FILE_EXECUTABLE />,
-          },
-          {
-            id: 34,
-            label: 'A-B Ride Share App',
-            icon: <icons.FILE_EXECUTABLE />,
-          },
-          {
-            id: 45,
-            label: 'Subscription Tracker Hackathon Project',
-            icon: <icons.FILE_EXECUTABLE />,
-          },
-          {
-            id: 56,
-            label: 'React/Redux Templates',
-            children: [
-              {
-                id: 1,
-                label: 'GitHub',
-                icon: <icons.FILE_PEN />,
-                onClick: () => openLink('https://www.github.com/y04nqt')
-              }
-            ]
-          },
-        ],
+  const toggleModal = () => {
+    setShowModal(!showModal);
+    console.log(showModal, 'here');
+  }
+
+  const getModal = (item: string) => {
+    const width = window.innerWidth / 1.25;
+    const height = window.innerHeight / 1.5;
+    const content:IMIMap = {
+      eli: {
+        w: `${(width < 500) ? width : 500}`,
+        h: `${height}`,
+        title: 'Eli, The Legendary One',
+        children: <Eli />,
+        btns: [{
+          value: 'Pet',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }, {
+          value: 'Scratch',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }],
+        dPos: {
+          x: Math.floor(Math.random() * 84) - 64, // pseudo randomly set position
+          y: Math.floor(Math.random() * 50), // pseudo randomly set position
+        },
       },
-      {
-        id: 1039,
-        label: 'Activities',
-        children: [
-          {
-            id: 17,
-            label: 'Rock Climbing',
-            children: [
-              {
-                id: 43,
-                label: 'RRG',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('green'),
-              },
-              {
-                id: 52,
-                label: 'GYM',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('blue'),
-              },
-            ],
-          },
-          {
-            id: 22,
-            label: 'Smoking Meats',
-            children: [
-              {
-                id: 41,
-                label: 'Beef Jerky',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('purple'),
-              },
-              {
-                id: 51,
-                label: 'Pork Butt',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('orange'),
-              },
-            ],
-          },
-          {
-            id: 21,
-            label: 'Producing Music',
-            children: [
-              {
-                id: 49,
-                label: 'SoundCloud',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('red'),
-              },
-              {
-                id: 491,
-                label: 'Check out my SoundCloud',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => openLink('https://soundcloud.com/mag_landrace/tracks'),
-              },
-              {
-                id: 59,
-                label: 'DAW - Native Instruments',
-                icon: <icons.FILE_MEDIA />,
-                onClick: () => easterTracker('yellow'),
-              },
-            ],
-          },
-        ],
+      music: {
+        w: `${(width < 500) ? width : 500}`,
+        h: `${height}`,
+        title: 'Wanna buy my album?',
+        children: <MusicPlayer />,
+        btns: [{
+          value: 'Nice Jams',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }, {
+          value: 'Good Vibes',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }],
+        dPos: {
+          x: Math.floor(Math.random() * 84) - 64, // pseudo randomly set position
+          y: Math.floor(Math.random() * 50), // pseudo randomly set position
+        },
       },
-      {
-        id: 3,
-        label: 'Other',
+      climbing: {
+        w: `${(width < 500) ? width : 500}`,
+        h: `${height}`,
+        title: 'Climbing',
+        children: (<GenericPopupContent
+          title="My Climbing"
+          textContent="Outside climbing for me is where I find a challenge and the strength to conquer it."
+          imgArr={[
+            require('../assets/slides/climbing_tall.JPG'),
+            require('../assets/slides/frantically_climbing_lol.png')
+          ]}
+          altArr={[
+            'Climbing Tall',
+            'Frantically Climbing Lol'
+          ]}
+        />),
+        btns: [{
+          value: 'Climb Hard',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }, {
+          value: 'Climb Harder',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }],
+        dPos: {
+          x: Math.floor(Math.random() * 84) - 64, // pseudo randomly set position
+          y: Math.floor(Math.random() * 50), // pseudo randomly set position
+        },
       },
-      {
-        id: 4,
-        label: 'config.cfg',
-        icon: <icons.FILE_SETTINGS />,
+      drinks: {
+        w: `${(width < 500) ? width : 500}`,
+        h: `${height}`,
+        title: 'Drinks',
+        children: (<GenericPopupContent
+          title="Favorite Drinks"
+          textContent="Tik Tak Taxis, Old Fashioned, and watermelon redbull vodkas (for partying)."
+          imgArr={[
+            require('../assets/slides/lost_lake_drink.png'),
+            require('../assets/slides/old_fashioned.jpg'),
+          ]}
+          altArr={[
+            'Lost Lake Tic Tak Taxi Tribute',
+            'The Old Fashioned',
+          ]}
+        />),
+        btns: [{
+          value: 'Cheers',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }, {
+          value: 'Salud',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }],
       },
-      {
-        id: 5,
-        label: 'random_file',
-        icon: <icons.FILE_UNKNOWN />,
+      mushrooms: {
+        w: `${(width < 500) ? width : 500}`,
+        h: `${height}`,
+        title: 'Mushrooms!',
+        children: (<GenericPopupContent
+          title="Some mushrooms I've found during my travels."
+          textContent="Finding mushrooms of all varieties is a lot of fun. Also, they're only one of the coolest kinds of organisms of all time."
+          imgArr={[
+            require('../assets/slides/mushroom_rrg.png'),
+            require('../assets/slides/line_of_shrooms.png'),
+          ]}
+          altArr={[
+            'A big mushroom I found while on a hike.',
+            'These mushrooms were lined up on the way to Infirmary.',
+          ]}
+        />),
+        btns: [{
+          value: 'Cheers',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }, {
+          value: 'Salud',
+          onClick: () => setShowModal(false), // showModal state var in toggleModal is always false when called this way :/ so using the setter is secure
+        }],
       },
-    ],
-  };
+    };
+
+    setModalItem(content[item])
+    toggleModal();
+  }
+
+  const easterTracker = (stone: string) => {
+    if (infinityStoneGauntlet[stone] === false) {
+      alertUser(counter, stone); // alert user of stone and their inventory count
+
+      const num = counter + 1
+      setInfinityStoneGauntlet({
+        ...infinityStoneGauntlet,
+        [stone]: true
+      })
+      setCounter(num);
+      console.log(`${num} clicks! You added the ${stone} stone!`);
+    }else{
+      console.log('You have already found this stone!');
+      alert('Nothing is here anymore... Continue your journey forward!');
+    }
+  }
+
+
   const isg = infinityStoneGauntlet;
   const activated = isg.red && isg.green && isg.blue && isg.purple && isg.orange && isg.yellow;
+
   return(
     <Frame
       padding={8}
@@ -165,37 +243,64 @@ export default function General(){
         className="text-left overflow-x-auto"
         padding={8}
       >
-        <h1
-          className="text-2xl font-bold mb-4"
-        >
-          Hello,<br/>I am Aaron Krueger & welcome to my website!
-        </h1>
-        <p className="ml-4">Let me introduce myself to you. I am a software engineer that rock climbs, cooks BBQ, and produces music.</p>
-        <p className="ml-4">I like to build products and architect technical solutions to real-world problems that generate profit.</p>
+        <Introduction />
         <hr
-          className="my-4"
+          className={`my-8 ${activated && "w-4/6"} mx-auto`}
         />
-        {activated && (
-          <>
-            <p
-              className="text-center my-4 text-lg"
-            >
-              I Can Only Show You The Door. You're The One That Has To Walk Through It.
-            </p>
-            <Link
-              className="text-center text-lg block mb-4"
-              to='/through-the-door'
-            >
-              <Button
-                className="rounded-full"
-              >
-                Do you wish to enter?
-              </Button>
-            </Link>
-          </>
+        {showModal && modalItem && (
+          <Modal
+            width={modalItem?.w}
+            height={modalItem?.h}
+            title={modalItem?.title}
+            icon={modalItem?.icon}
+            buttons={modalItem?.btns}
+            defaultPosition={modalItem?.dPos}
+            toggleModal={toggleModal}
+            children={modalItem?.children}
+          />
         )}
-        <Tree {...treeNodes}/>
+        {activated && (
+          <Portal />
+        )}
+        <TreeStructure
+          easterTracker={easterTracker}
+          getModal={getModal}
+        />
       </Frame>
+    </Frame>
+  )
+}
+
+function GenericPopupContent({
+  title = 'Generic Popup Content',
+  textContent = 'Generic Text Content',
+  imgArr = ['https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'],
+  altArr = ['I am not a cat!'],
+  bg = 'gray',
+}) {
+  if (imgArr.length !== altArr.length) {
+    throw new Error('imgArr and altArr must be the same length!');
+  }
+
+  const randIndex = Math.floor(Math.random() * imgArr.length);
+  return (
+    <Frame
+      bg={bg}
+      padding={8}
+    >
+      <h1
+        className="text-center text-2xl font-bold my-2"
+      >
+        {title}
+      </h1>
+      <img
+        className="rounded-full w-3/4 mx-auto border-4 border-gray-800"
+        src={imgArr[randIndex]}
+        alt={altArr[randIndex]}
+      />
+      <p
+        className="text-center text-xl my-2"
+      >{textContent}</p>
     </Frame>
   )
 }
