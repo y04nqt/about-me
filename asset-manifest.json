@@ -1,7 +1,16 @@
 {
   "files": {
-    "main.css": "/about-me/static/css/main.a2f3357a.css",
-    "main.js": "/about-me/static/js/main.3189a0cc.js",
+    "main.css": "/about-me/static/css/main.eabc3d36.css",
+    "main.js": "/about-me/static/js/main.c443c38d.js",
+    "static/media/eli_lookout.png": "/about-me/static/media/eli_lookout.1bee62e8529ee572accf.png",
+    "static/media/eli_sleepy.png": "/about-me/static/media/eli_sleepy.57978a0f465d18245d4b.png",
+    "static/media/eli_with_hat.png": "/about-me/static/media/eli_with_hat.421128216a74c5263181.png",
+    "static/media/frantically_climbing_lol.png": "/about-me/static/media/frantically_climbing_lol.0712bf15c8d7bbcb99cb.png",
+    "static/media/mushroom_rrg.png": "/about-me/static/media/mushroom_rrg.9f27b25c00e45230afb6.png",
+    "static/media/line_of_shrooms.png": "/about-me/static/media/line_of_shrooms.f859530a4c9641554bf3.png",
+    "static/media/climbing_tall.JPG": "/about-me/static/media/climbing_tall.1696bc9c7b05855cd803.JPG",
+    "static/media/lost_lake_drink.png": "/about-me/static/media/lost_lake_drink.9c6cbfce4324463f7ac5.png",
+    "static/media/old_fashioned.jpg": "/about-me/static/media/old_fashioned.a85ce6713a6edfb3ace2.jpg",
     "static/media/doge.webp": "/about-me/static/media/doge.93752215379aa95383fa.webp",
     "static/media/matrix-wp.gif": "/about-me/static/media/matrix-wp.20a1eebf21a6fe9f0bd1.gif",
     "static/media/pikachu.webp": "/about-me/static/media/pikachu.0b2012b4e04249bab33c.webp",
@@ -10,11 +19,11 @@
     "static/media/check.svg": "/about-me/static/media/check.cab94f089fae33556518400eea96707f.svg",
     "static/media/check-disabled.svg": "/about-me/static/media/check-disabled.6c74515b9665a58c67515a6b7d03ecec.svg",
     "static/media/rightcaret.svg": "/about-me/static/media/rightcaret.4316e9ffed3db2dabed84fe4f8329010.svg",
-    "main.a2f3357a.css.map": "/about-me/static/css/main.a2f3357a.css.map",
-    "main.3189a0cc.js.map": "/about-me/static/js/main.3189a0cc.js.map"
+    "main.eabc3d36.css.map": "/about-me/static/css/main.eabc3d36.css.map",
+    "main.c443c38d.js.map": "/about-me/static/js/main.c443c38d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2f3357a.css",
-    "static/js/main.3189a0cc.js"
+    "static/css/main.eabc3d36.css",
+    "static/js/main.c443c38d.js"
   ]
 }
