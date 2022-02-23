@@ -26,7 +26,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
   email: {
     emoji: '📧',
     btnText: 'Hello Aaron, let\'s talk!',
-    labelText: 'Email me',
+    labelText: 'Email Me',
     name: 'Email (akr.git.receiver@gmail.com)',
     link: 'mailto:akr.git.receiver@gmail.com?subject=Hello%20Aaron%20From%20Website',
     description: "Copy the email address above to contact me."
@@ -34,7 +34,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
   resume: {
     emoji: '📝',
     btnText: 'Download it',
-    labelText: 'Get my Résumé',
+    labelText: 'Get My Résumé',
     name: 'Résumé',
     link: 'https://github.com/y04nqt/about-me/raw/main/public/aaron_krueger_resume.pdf',
     description: "My résumé that contains my work experience and education. 📝"
@@ -42,7 +42,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
   github: {
     emoji: '💾',
     btnText: 'Explore My GitHub',
-    labelText: 'Explore my Github',
+    labelText: 'Read My Code On Github',
     name: 'GitHub',
     link: 'https://www.github.com/y04nqt',
     description: "My Github profile that contains my projects and other information. 💾",
@@ -58,7 +58,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
   soundcloud: {
     emoji: '📻',
     btnText: 'Jam To My Music',
-    labelText: 'Find the beats on SoundCloud',
+    labelText: 'Peruse My SoundCloud',
     name: 'SoundCloud',
     link: 'https://soundcloud.com/mag_landrace',
     description: "My SoundCloud profile that contains my music. 📻"
