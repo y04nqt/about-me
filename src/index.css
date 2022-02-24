@@ -101,3 +101,16 @@ code {
 .eli-2 {
   background-image: url('assets/eli/eli_lookout.png');
 }
+
+
+.animate-typewriter {
+  display: inline;
+  border-right: 0.5em solid; /* The typwriter cursor */
+  animation: typing 3.5s steps(40, end), blink-caret .5s step-end infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: lightgreen; }
+}
