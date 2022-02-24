@@ -16,10 +16,6 @@ interface IGauntletMap {
   [key: string]: boolean
 }
 
-interface IModalMap {
-  [key: string]: Object
-}
-
 interface IModalItem {
   title: string,
   w: string,
