@@ -23,14 +23,6 @@ interface IInfo {
 }
 
 const ADDITIONAL_INFO_ENUM: IInfo = {
-  email: {
-    emoji: '📧',
-    btnText: 'Hello Aaron, let\'s talk!',
-    labelText: 'Email Me',
-    name: 'Email (akr.git.receiver@gmail.com)',
-    link: 'mailto:akr.git.receiver@gmail.com?subject=Hello%20Aaron%20From%20Website',
-    description: "Copy the email address above to contact me."
-  },
   resume: {
     emoji: '📝',
     btnText: 'Download it',
@@ -38,6 +30,14 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
     name: 'Résumé',
     link: 'https://github.com/y04nqt/about-me/raw/main/public/aaron_krueger_resume.pdf',
     description: "My résumé that contains my work experience and education. 📝"
+  },
+  email: {
+    emoji: '📧',
+    btnText: 'Hello Aaron, let\'s talk!',
+    labelText: 'Email Me',
+    name: 'Email (akr.git.receiver@gmail.com)',
+    link: 'mailto:akr.git.receiver@gmail.com?subject=Hello%20Aaron%20From%20Website',
+    description: "Copy the email address above to contact me."
   },
   github: {
     emoji: '💾',
