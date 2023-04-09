@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button, ThemeProvider } from '@react95/core';
-import '@react95/icons/icons.css';
+
 import { Winmine1 } from '@react95/icons';
 
 import './App.css';
