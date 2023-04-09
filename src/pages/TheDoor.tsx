@@ -36,7 +36,7 @@ export default function TheDoor(){
       <Frame
         boxShadow="in"
         bg="black"
-        height={"100%"}
+        h={"100%"}
         className="text-left overflow-x-auto"
         padding={8}
       >
@@ -47,8 +47,8 @@ export default function TheDoor(){
         </h2>
         <Frame
           bg={open ? "aliceblue" : "#F7F7F7"}
-          width="250px"
-          height="250px"
+          w="250px"
+          h="250px"
           className='p-4 rounded-full mx-auto absolute'
           style={{
             top: 'calc(50% - 125px)',

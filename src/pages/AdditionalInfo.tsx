@@ -93,7 +93,7 @@ export default function AdditionalInfo(){
       }}
     >
       <Frame
-        height="100%"
+        h="100%"
         boxShadow="in"
         bg="green"
         className="text-left overflow-x-auto"

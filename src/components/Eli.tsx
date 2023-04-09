@@ -19,7 +19,7 @@ export default function Eli(){
     >
       <h1 className="text-center">{titles[Math.floor(Math.random() * 3)]}</h1>
       <Frame
-        height={250}
+        h={250}
         boxShadow="in"
       >
         <section

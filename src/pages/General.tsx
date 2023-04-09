@@ -232,7 +232,7 @@ export default function General(){
       }}
     >
       <Frame
-        height="100%"
+        h="100%"
         boxShadow="in"
         bg="green"
         className="text-left overflow-x-auto"
