@@ -34,7 +34,14 @@ function App() {
           <nav
             className='navbar navbar-expand-lg navbar-light bg-light'
           >
-            <ul className='flex justify-between px-8'>
+            <ul className='flex px-8'>
+              <li className="p-4">
+                <a href="/">
+                  <Button>
+                    🏠
+                  </Button>
+                </a>
+              </li>
               <li className="p-4">
                 <Link to='/'>
                   <Button>

@@ -28,7 +28,7 @@ const ADDITIONAL_INFO_ENUM: IInfo = {
     btnText: 'Download it',
     labelText: 'Get My Résumé',
     name: 'Résumé',
-    link: 'https://github.com/y04nqt/about-me/raw/main/public/aaron_krueger_resume.pdf',
+    link: 'https://github.com/y04nqt/portfolio-data/raw/main/aaron-krueger-resume.pdf',
     description: "My résumé that contains my work experience and education. 📝"
   },
   email: {
@@ -96,7 +96,7 @@ export default function AdditionalInfo(){
         h="100%"
         boxShadow="in"
         bg="green"
-        className="text-left overflow-x-auto"
+        className="overflow-x-auto text-left"
         padding={8}
       >
         {!selectedOption && (

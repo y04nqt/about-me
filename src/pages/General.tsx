@@ -235,12 +235,12 @@ export default function General(){
         h="100%"
         boxShadow="in"
         bg="green"
-        className="text-left overflow-x-auto"
+        className="overflow-x-auto text-left"
         padding={8}
       >
         <Introduction />
         <hr
-          className={`my-8 ${activated && "w-4/6"} mx-auto`}
+          className={`my-8 ${activated && "w-2/3"} mx-auto`}
         />
         {showModal && modalItem && (
           <Modal
@@ -284,7 +284,7 @@ function GenericPopupContent({
       padding={8}
     >
       <h1
-        className="text-center text-2xl font-bold my-2"
+        className="my-2 text-2xl font-bold text-center"
       >
         {title}
       </h1>
@@ -294,7 +294,7 @@ function GenericPopupContent({
         alt={altArr[randIndex]}
       />
       <p
-        className="text-center text-xl my-2"
+        className="my-2 text-xl text-center"
       >{textContent}</p>
     </Frame>
   )
