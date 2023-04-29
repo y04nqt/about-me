@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Button, ThemeProvider } from '@react95/core';
 
-import { Winmine1 } from '@react95/icons';
+// import { Winmine1 } from '@react95/icons';
 
 import './App.css';
 
@@ -12,7 +12,7 @@ import {
   Link
 } from "react-router-dom";
 
-import countapi from "countapi-js";
+// import countapi from "countapi-js";
 
 import AdditionalInfo from './pages/AdditionalInfo';
 import General from './pages/General';
@@ -20,12 +20,12 @@ import FourOhFour from './pages/404';
 import TheDoor from './pages/TheDoor';
 
 function App() {
-  const [siteCounter, setSiteCounter] = useState(0);
-  useEffect(() => {
-    countapi.visits('y04nqt.github.io').then((result) => {
-      setSiteCounter(result.value);
-    });
-  }, [])
+  // const [siteCounter, setSiteCounter] = useState(0);
+  // useEffect(() => {
+  //   countapi.visits('y04nqt.github.io').then((result) => {
+  //     setSiteCounter(result.value);
+  //   });
+  // }, [])
 
   return (
     <ThemeProvider theme="matrix">
@@ -71,13 +71,13 @@ function App() {
           right: '4px',
           color: 'white',
         }}>
-          <span
+          {/* <span
             className='mr-4'
             style={{color: 'red'}}
           >
             <Winmine1 className='inline mr-2' variant="32x32_4"/>
             {siteCounter}
-          </span>
+          </span> */}
         </footer>
       </div>
     </ThemeProvider>
